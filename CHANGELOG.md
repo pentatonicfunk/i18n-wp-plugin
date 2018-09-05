@@ -1,3 +1,7 @@
+2.0.2
+-----
+Remove `moment-timezone`
+
 2.0.1
 ------
 

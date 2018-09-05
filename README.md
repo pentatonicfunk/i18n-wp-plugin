@@ -247,7 +247,7 @@ The mixin has been removed from this distribution. Please use version 1 of `i18n
 
 `localize` is a higher-order component which, when invoked as a function with a component,
 returns a new component class. The new component wraps the original component, passing all
-original props plus props to assist in localization (`translate`, `moment`, and `numberFormat`).
+original props plus props to assist in localization (`translate`, and `numberFormat`).
 The advantage of using a higher-order component instead of calling translate directly from
 the `i18n-calypso` module is that the latter does not properly account for change events
 which may be emitted by the state emitter object.
