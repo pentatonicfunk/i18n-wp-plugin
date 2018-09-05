@@ -115,6 +115,7 @@ module.exports = function formatInPHP(matches, options) {
 			})
 			.join('\n'),
 		');',
+		'return $' + arrayName + ';',
 		'/* THIS IS THE END OF THE GENERATED FILE */',
 	].join('\n');
 };
