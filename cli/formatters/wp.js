@@ -1,3 +1,4 @@
+var arrayKeys = [];
 /**
  * Determine the correct GlotPress i18n function to use based on the input:
  * __(), _n(), _nx(), _x()
@@ -89,7 +90,6 @@ function buildPHPString(properties, textdomain) {
 	}
 
 	response.push(string);
-
 	return response.join('\n');
 }
 
@@ -110,6 +110,13 @@ module.exports = function formatInPHP(matches, options) {
 		'/* THIS IS A GENERATED FILE. DO NOT EDIT DIRECTLY. */',
 		'$' + arrayName + ' = array(',
 		matches
+			.filter(function(element) {
+				if (arrayKeys.indexOf(element.single) < 0) {
+					arrayKeys.push(element.single);
+					return true;
+				}
+				return false;
+			})
 			.map(function(element) {
 				return buildPHPString(element, options.textdomain);
 			})
