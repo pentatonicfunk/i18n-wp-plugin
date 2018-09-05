@@ -1,10 +1,10 @@
-I18n Calypso
+I18n WP Plugin
 ============
+Originally from [i18n-calypso](https://github.com/Automattic/i18n-calypso), but here moment.js is stripped due to build size.
 
 This lib enables translations, exposing three public methods:
 
 * [.translate()](#translate-method)
-* [.moment()](#moment-method)
 * [.numberFormat()](#numberformat-method)
 
 It also provides a Higher-Order Component named [localize()](#localize). Wrapping your component in `localize()` will give it the aforementioned functions as props. This is the suggested way of using them with React components.
@@ -212,21 +212,6 @@ var content = i18n.translate( 'post', {
 ```
 
 See the [test cases](test/test.jsx) for more example usage.
-
-## Moment Method
-
-This module includes an instantiation of `moment.js` to allow for internationalization of dates and times. We generate a momentjs locale file as part of loading a locale and automatically update the moment instance to use the correct locale and translations. You can use `moment()` from within any component like this:
-
-```js
-var thisMagicMoment = i18n.moment( "2014-07-18T14:59:09-07:00" ).format( 'LLLL' );
-```
-
-And you can use it from outside of React like this.
-
-```js
-var i18n = require( 'i18n-calypso' );
-var thisMagicMoment = i18n.moment( "2014-07-18T14:59:09-07:00" ).format( 'LLLL' );
-```
 
 ## numberFormat Method
 
