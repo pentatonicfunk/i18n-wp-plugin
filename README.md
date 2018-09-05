@@ -39,7 +39,7 @@ The following attributes can be set in the options object to alter the translati
 If you pass a single string into `translate`, it will trigger a simple translation without any context, pluralization, sprintf arguments, or comments. You would call it like this.
 
 ```js
-var i18n = require( 'i18n-calypso' );
+var i18n = require( 'i18n-wp-plugin' );
 var translation = i18n.translate( 'Some content to translate' );
 ```
 
@@ -233,14 +233,10 @@ Using the method `hasTranslation` you can check whether a translation for a give
 
 ### Usage
 ```js
-var i18n = require( 'i18n-calypso' );
+var i18n = require( 'i18n-wp-plugin' );
 i18n.hasTranslation( 'This has been translated' ); // true
 i18n.hasTranslation( 'Not translation exists' ); // false
 ```
-
-## Mixin
-
-The mixin has been removed from this distribution. Please use version 1 of `i18n-calypso` if you need to use the mixin.
 
 
 ## Localize
@@ -249,7 +245,7 @@ The mixin has been removed from this distribution. Please use version 1 of `i18n
 returns a new component class. The new component wraps the original component, passing all
 original props plus props to assist in localization (`translate`, and `numberFormat`).
 The advantage of using a higher-order component instead of calling translate directly from
-the `i18n-calypso` module is that the latter does not properly account for change events
+the `i18n-wp-plugin` module is that the latter does not properly account for change events
 which may be emitted by the state emitter object.
 
 ### Usage
@@ -259,7 +255,7 @@ Typically, you'd wrap your exported function with `localize`:
 ```jsx
 // greeting.jsx
 import React from 'react';
-import { localize } from 'i18n-calypso';
+import { localize } from 'i18n-wp-plugin';
 
 function Greeting( { translate, className } ) {
 	return (
@@ -293,7 +289,7 @@ I18n accepts a language-specific locale json file that contains the whitelisted 
 
 ### Key Hashing
 
-In order to reduce file-size, i18n-calypso allows the usage of hashed keys for lookup. This is a non-standard extension of the Jed standard which is enabled by supplying a header key `key-hash` to specify a hash method (currently only `sha1` is supported), as well as a hash length. For example `sha1-4` uses the first 4 hexadecimal chars of the sha1 hash of the standard Jed lookup string. As a further optimization, variable hash lengths are available, potentially requiring multiple lookups per string: `sha1-3-7` specifies that hash lengths of 3 to 7 are used in the file.
+In order to reduce file-size, i18n-wp-plugin allows the usage of hashed keys for lookup. This is a non-standard extension of the Jed standard which is enabled by supplying a header key `key-hash` to specify a hash method (currently only `sha1` is supported), as well as a hash length. For example `sha1-4` uses the first 4 hexadecimal chars of the sha1 hash of the standard Jed lookup string. As a further optimization, variable hash lengths are available, potentially requiring multiple lookups per string: `sha1-3-7` specifies that hash lengths of 3 to 7 are used in the file.
 
 #### Example
 

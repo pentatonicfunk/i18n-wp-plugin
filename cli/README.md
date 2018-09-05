@@ -1,23 +1,23 @@
-# i18n-calypso CLI
+# i18n-wp-plugin CLI
 
 Scans your JavaScript sources/build files and generates a POT file or a PHP translation file which can be understood by the GlotPress plugin.
 
 ## Installation
 
-`npm install i18n-calypso`
+`npm install i18n-wp-plugin`
 
 
 ## Using the CLI
 
-- `npm install -g i18n-calypso`
-- `i18n-calypso -i <input_file> -o <output_file> -f <format:POT|PHP>`
+- `npm install -g i18n-wp-plugin`
+- `i18n-wp-plugin -i <input_file> -o <output_file> -f <format:POT|PHP>`
 
 
 ## From your code
 
 ```js
-var i18nCalypso = require( 'i18n-calypso/cli' );
-i18nCalypso( {
+var i18nWpPlugin = require( 'i18n-wp-plugin/cli' );
+i18nWpPlugin( {
     inputPaths: <paths to your js files to scan>,
     output: <path to your destination>
     format: <format of the output: POT, PHP or JSON>

@@ -9,7 +9,7 @@ var expect = require( 'chai' ).expect,
 /**
  * Internal dependencies
  */
-var i18nCalypsoCLI = require( '../../cli' );
+var i18nWPPluginCLI = require( '../../cli' );
 
 // generate whitelist file
 var sourceFiles;
@@ -143,7 +143,7 @@ describe( 'index', function() {
 		var output;
 
 		before( function() {
-			output = i18nCalypsoCLI( {
+			output = i18nWPPluginCLI( {
 				projectName: 'i18nTest',
 				inputPaths: sourceFiles,
 				format: 'POT',
@@ -246,7 +246,7 @@ describe( 'index', function() {
 		var output;
 
 		before( function() {
-			output = i18nCalypsoCLI( {
+			output = i18nWPPluginCLI( {
 				projectName: 'i18nTest',
 				inputPaths: sourceFiles,
 				phpArrayName: 'arrayName',
@@ -329,7 +329,7 @@ describe( 'index', function() {
 
 		describe( 'that has no special symbols', function() {
 			before( function() {
-				output = i18nCalypsoCLI( {
+				output = i18nWPPluginCLI( {
 					projectName: 'i18nTest',
 					inputPaths: sourceFiles,
 					phpArrayName: 'arrayName',
@@ -346,7 +346,7 @@ describe( 'index', function() {
 
 		describe( 'that has double quotes', function() {
 			before( function() {
-				output = i18nCalypsoCLI( {
+				output = i18nWPPluginCLI( {
 					projectName: 'i18nTest',
 					inputPaths: sourceFiles,
 					phpArrayName: 'arrayName',
