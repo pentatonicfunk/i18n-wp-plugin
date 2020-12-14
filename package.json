@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/pentatonicfunk/i18n-wp-plugin#readme",
   "dependencies": {
-    "commander": "^2.9.0",
+    "commander": "^6.2.1",
     "create-react-class": "^15.6.2",
     "debug": "^3.1.0",
     "globby": "^6.1.0",
